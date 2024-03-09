@@ -18,11 +18,12 @@ int main(int argc, char** argv)
   //=========================================
   //            Very Simple Test
   //=========================================
-  anhthd::cpplibs::lru l(5);
+  anhthd::cpplibs::lru l(3);
   fprintf(stdout, "LRU size: %d\n", l.size());
 
-  l.put("a", "aha");
-  l.put("b", "bede");
+  l.put("a", "aa");
+  l.put("b", "bb");
+  l.put("c", "cc");
   fprintf(stdout, "LRU size: %d\n", l.size());
 
   auto a = l.get("a");
@@ -36,6 +37,12 @@ int main(int argc, char** argv)
   auto c = l.get("c");
   if (c) {
     std::cout << "Found: " << *c << std::endl;
+  }
+
+  // KNOWN INSSUE: hashing collision
+  auto d = l.get("d");
+  if (d) {
+    std::cout << "Found: " << *d << std::endl;
   }
 
   return 0;

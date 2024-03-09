@@ -132,7 +132,7 @@ private:
     // Remove the last node (lest_prio) and setup new lest_prio to maintain
     // the const dll's capacity.
     inline void trim_dll(dll* dll_) {
-      if (dll_->dll_len < dll_->dll_cap) return;
+      if (dll_->dll_len <= dll_->dll_cap) return;
       dlln* tmp = dll_->lest_prio;
       dll_->lest_prio->prev->next = nullptr;
       dll_->lest_prio = dll_->lest_prio->prev;
