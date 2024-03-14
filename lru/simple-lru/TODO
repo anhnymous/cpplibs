@@ -1,0 +1,9 @@
+1. Hash algorithm
+The current implementation is using a hashing algorithms which is not really good.
+It is causing hash collision.
+
+2. The current implementation does not allow user "plug" their hash function into
+the LRU data structure. I should allow users specify their desired hashing function.
+
+3. The current implementation is only applicable for key-value pairs of string and
+string. I may need to make the implementation more open.
