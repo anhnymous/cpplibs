@@ -2,6 +2,7 @@ LRU: Last Recently Used Cache
 
 -----------------------------
 simple-lru: non-templated LRU
+advanced-lru: templated LRU
 
 KNOWN ISSUE: hasing collision
 Need to find a better string hashing algo.
