@@ -1,11 +1,3 @@
-/*
- * file   test_unique_ptr.cc
- * brief
- *
- *  Created on: Mon 25 Mar 2024 01:25:40 PM UTC
- *    Author: anhthd
- */
-
 #include <string>
 #include <cstdio>
 #include <cstdlib>
@@ -24,7 +16,7 @@ int main(int argc, char** argv)
   auto raw = upi.get();
   std::cout << "raw = " << *raw << std::endl;
 
-  //p1 = upi;
+  //p1 = upi; <- FAILED
 
   auto another = std::move(upi);
   std::cout << "another = " << *another << std::endl;

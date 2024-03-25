@@ -95,4 +95,3 @@ unique_ptr<T> make_unique(Args&& ... args) {
 };  // namespace anhthd
 
 #endif /* UNIQUE_PTR_H_ */
-
