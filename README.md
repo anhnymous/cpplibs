@@ -10,4 +10,4 @@ Source files in this repo are added from different repos and they are NOT YET un
 in term of my coding style, will do.
 
 My ultimate coding style and convention for open-source libs repository should look
-like in [simple lru](./lru/simple-lru/lru.hh) and [filesystem](./filesystem).
+like in [simple lru](./cache/lru/simple-lru/lru.hh) and [filesystem](./filesystem).
