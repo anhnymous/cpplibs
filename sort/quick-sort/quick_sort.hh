@@ -1,5 +1,5 @@
 /**************************************************************************************
-* Insertion Sort
+* Quick Sort
 *
 * COPYRIGHT: (c) 2022 Anh Tran
 * Author: Anh Tran (anhthd2017@gmail.com)
@@ -17,26 +17,9 @@
 * You should have received a copy of the GNU General Public License along with this
 * program. If not, see <https://www.gnu.org/licenses/>.
 **************************************************************************************/
-#ifndef INSERTION_SORT_H_
-#define INSERTION_SORT_H_
+#ifndef QUICK_SORT_H_
+#define QUICK_SORT_H_
 
-namespace anhthd {
-namespace cpplibs {
-namespace sort {
-template <class _random_it>
-void insertion(_random_it _first, _random_it _last) {
-  if (_first == _last) return;
-  if (_first == (_last - 1)) return;
-  _random_it i = _first + 1;
-  for (; i != _last; ++i) {
-    _random_it j = i;
-    while ((j - 1) >= _first && *j < *(j - 1)) {
-      std::swap(*j, *(j - 1)); --j;
-    }
-  }
-}
-};  // namespace sort
-};  // namespace cpplibs
-};  // namespace anhthd
+namespace anhthd
 
-#endif /* INSERTION_SORT_H_ */
+#endif /* QUICK_SORT_H_ */

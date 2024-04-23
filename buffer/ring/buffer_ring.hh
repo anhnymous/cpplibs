@@ -19,7 +19,7 @@
 #ifndef BUFFER_RING_H_
 #define BUFFER_RING_H_
 
-template <<F6>
+template <typename T>
 class buffer_ring
 {
 public:
