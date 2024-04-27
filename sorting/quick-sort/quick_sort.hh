@@ -3,7 +3,7 @@
 *
 * COPYRIGHT: (c) 2022 Anh Tran
 * Author: Anh Tran (anhthd2017@gmail.com)
-* File: insertion_sort.hh
+* File: quick_sort.hh
 * License: GPLv3
 *
 * This program is free software: you can redistribute it and/or modify it under
