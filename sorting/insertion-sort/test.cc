@@ -1,5 +1,5 @@
 /*
- * file   insertion_sort.cc
+ * file   test.cc
  * brief
  *
  *    Author: anhthd
@@ -12,7 +12,7 @@
 #include <iostream>
 #include <algorithm>
 
-#include "../insertion_sort.hh"
+#include "insertion_sort.hh"
 
 void print(const std::vector<int>& v) {
   for (const auto& e : v) {
@@ -24,17 +24,17 @@ int main(int argc, char** argv)
 {
   std::vector<int> vi{5, 4, 3, 2, 1};
   print(vi);
-  anhthd::cpplibs::sort::insertion(vi.begin(), vi.end());
+  anhthd::cpplibs::sorting::insertion(vi.begin(), vi.end());
   print(vi);
 
   std::vector<int> vi2{};
   print(vi2);
-  anhthd::cpplibs::sort::insertion(vi2.begin(), vi2.end());
+  anhthd::cpplibs::sorting::insertion(vi2.begin(), vi2.end());
   print(vi2);
 
   std::vector<int> vi3{2, 1};
   print(vi3);
-  anhthd::cpplibs::sort::insertion(vi3.begin(), vi3.end());
+  anhthd::cpplibs::sorting::insertion(vi3.begin(), vi3.end());
   print(vi3);
 
   return 0;

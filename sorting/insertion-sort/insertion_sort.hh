@@ -22,7 +22,7 @@
 
 namespace anhthd {
 namespace cpplibs {
-namespace sort {
+namespace sorting {
 template <class _random_it>
 void insertion(_random_it _first, _random_it _last) {
   if (_first == _last) return;
@@ -35,7 +35,7 @@ void insertion(_random_it _first, _random_it _last) {
     }
   }
 }
-};  // namespace sort
+};  // namespace sorting
 };  // namespace cpplibs
 };  // namespace anhthd
 
