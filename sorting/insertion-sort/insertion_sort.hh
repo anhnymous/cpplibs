@@ -23,14 +23,14 @@
 namespace anhthd {
 namespace cpplibs {
 namespace sorting {
-template <class _random_it>
-void insertion(_random_it _first, _random_it _last) {
-  if (_first == _last) return;
-  if (_first == (_last - 1)) return;
-  _random_it i = _first + 1;
-  for (; i != _last; ++i) {
-    _random_it j = i;
-    while ((j - 1) >= _first && *j < *(j - 1)) {
+template <class random_it__>
+void insertion(random_it__ first_, random_it__ last_) {
+  if (first_ == last_) return;
+  if (first_ == (last_ - 1)) return;
+  random_it__ i = first_ + 1;
+  for (; i != last_; ++i) {
+    random_it__ j = i;
+    while ((j - 1) >= first_ && *j < *(j - 1)) {
       std::swap(*j, *(j - 1)); --j;
     }
   }

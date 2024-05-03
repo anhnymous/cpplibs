@@ -15,7 +15,7 @@
 using string = std::string;
 int main(int argc, char** argv)
 {
-  anhthd::cpplibs::lru<string, string, 5> l;
+  anhthd::cpplibs::cache::lru<string, string, 5> l;
   fprintf(stdout, "LRU size: %ld\n", l.size());
 
   l.put("a", "aa");

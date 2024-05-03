@@ -18,7 +18,7 @@ int main(int argc, char** argv)
   //=========================================
   //            Very Simple Test
   //=========================================
-  anhthd::cpplibs::lru l(3);
+  anhthd::cpplibs::cache::lru l(3);
   fprintf(stdout, "LRU size: %d\n", l.size());
 
   l.put("a", "aa");

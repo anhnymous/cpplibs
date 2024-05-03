@@ -29,6 +29,7 @@
 
 namespace anhthd {
 namespace cpplibs {
+namespace cache {
 using string = std::string;
 class lru
 {
@@ -249,6 +250,7 @@ private:
     }
   };
 };
+};  // namespace cache
 };  // namespace cpplibs
 };  // namespace anhthd
 

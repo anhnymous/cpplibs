@@ -24,12 +24,9 @@
 
 using string = std::string;
 
-namespace anhthd
-{
-namespace cpplibs
-{
-namespace filesystem
-{
+namespace anhthd {
+namespace cpplibs {
+namespace filesystem {
 class path
 {
 public:

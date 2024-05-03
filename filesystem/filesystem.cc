@@ -29,12 +29,9 @@
 
 #include "filesystem.hh"
 
-namespace anhthd
-{
-namespace cpplibs
-{
-namespace filesystem
-{
+namespace anhthd {
+namespace cpplibs {
+namespace filesystem {
 #define SIZE 1024
 
 static std::queue<char> strip_slash(const char* s_, size_t length_)

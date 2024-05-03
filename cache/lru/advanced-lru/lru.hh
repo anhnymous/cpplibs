@@ -29,6 +29,7 @@
 
 namespace anhthd {
 namespace cpplibs {
+namespace cache {
 template <typename _Kp, typename _Tp, std::size_t _Nm>
 class lru
 {
@@ -119,7 +120,7 @@ private:
       return true;
     }
 
-    static std::size_t string_hash(const char* _key, std::size_t table_size) {
+    static inline std::size_t string_hash(const char* _key, std::size_t table_size) {
       std::size_t hash = 5381;
       std::size_t c;
       while ((c = *_key++))
@@ -148,7 +149,7 @@ private:
 
     static void dll_insert(dll* _dll, key_type&& _key, value_type&& _value) {
       auto hashed_key = string_hash(_key.c_str(), _dll->dll_cap);
-      if (_dll->dll_size == 0) { // Insert new node into an empty dll
+      if (_dll->dll_size == 0) {
         dlln* node = nullptr;
         node = new_dll_node(hashed_key, _value);
         node->prev = node->next = nullptr;
@@ -156,7 +157,7 @@ private:
         _dll->lest_prio = node;
         _dll->dll_size++;
         trim_dll(_dll);
-      } else if(_dll->dll_size == 1) {  // The current dll has 1 node
+      } else if(_dll->dll_size == 1) {
         // The implementation does not allow the same key associated different values.
         if (hashed_key == _dll->hest_prio->key) return;
 
@@ -167,7 +168,7 @@ private:
         _dll->hest_prio = node;
         _dll->dll_size++;
         trim_dll(_dll);
-      } else { // The current dll has more than 1 node
+      } else {
         // The implementation does not allow the same key associated different values.
         if (hashed_key == _dll->hest_prio->key) return;
 
@@ -255,6 +256,7 @@ private:
     }
   };
 };
+};  // namespace cache
 };  // namespace cpplibs
 };  // namespace anhthd
 
