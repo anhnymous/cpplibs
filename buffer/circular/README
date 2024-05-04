@@ -1,0 +1,2 @@
+circular.hh: one-end circular buffer (fixed-size queue)
+decircular.hh: two-end circular buffer (fixed-size dequeue)
