@@ -5,5 +5,4 @@ shipped with non-up-to-date toolchains. And those toolchains could not compile s
 code which employs modern C++ features and syntaxs, i.e. std::filesystem, std::optional.
 
 So, sometimes, I have to rollout a trivial implementation of such things, like
-anhthd::cpplibs::filesystem which mimics std::filesystem interfaces.
-
+filesystem which mimic std::filesystem interfaces.

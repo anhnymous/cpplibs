@@ -5,6 +5,7 @@
 
 #include "filesystem.hh"
 namespace fs = anhthd::cpplibs::filesystem;
+using namespace std;
 
 int main(int argc, char** argv)
 {
