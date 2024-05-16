@@ -12,6 +12,8 @@ int main(int argc, char** argv)
   /*******************************************************************************
    * Test basic Constructors and Assignment operators
    *******************************************************************************/
+  cout << "****** Test basic Constructors and Assignment operators *************\n";
+
   fs::path c1{"/tmp/c1////"};
   std::cout << c1;
 
@@ -50,8 +52,12 @@ int main(int argc, char** argv)
   std::cout << c12;
 
   /*******************************************************************************
-   * Test basic interfaces: is_directory, is_regular_file, copy_file
+   * Test basic interfaces: is_directory, is_regular_file, is_symbolic_link
    *******************************************************************************/
+  cout << "***********************************************************************\n";
+  cout << "* Test basic is_directory, is_regular_file, is_symbolic_link          *\n";
+  cout << "***********************************************************************\n";
+
   fs::error_code ec;
   fs::path dir{"./dir-exist//"};
   fs::path file{"./file-exist"};
@@ -90,6 +96,13 @@ int main(int argc, char** argv)
     fprintf(stdout, "%s is NOT symbolic link\n", symlink_file.raw());
   }
 
+  /*******************************************************************************
+   * Test basic interfaces: copy_file, file_size
+   *******************************************************************************/
+  cout << "***********************************************************************\n";
+  cout << "* Test basic copy_file, operator p_a/p_b, file_size                   *\n";
+  cout << "***********************************************************************\n";
+
   fs::path src_bin = "src.bin_file";
   fs::path dst_bin = "dst.bin_file";
   if (!fs::copy_file(src_bin, dst_bin, ec)) {
@@ -103,9 +116,16 @@ int main(int argc, char** argv)
   auto ab = a/b;
   std::cout << ab;
 
-  fs::path test{"./test.ccc"};
+  fs::path test{"./sample.txt"};
   if (fs::is_file_exists(test, ec)) {
-    std::cout << "File exists\n";
+    std::cout << "File sample.txt exists!\n";
+    auto fsize = fs::file_size(test, ec);
+    if (fsize == -1) {
+      std::cerr << ec.what() << endl;
+    }
+    else {
+      std::cout << "File sample.txt size: " << fsize << endl;
+    }
   }
   return 0;
 }

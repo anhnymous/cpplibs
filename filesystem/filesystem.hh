@@ -323,7 +323,7 @@ bool is_regular_file(const path& p_, error_code& ec_) {
     ec_.set_err_msg(strerror(errno));
     return false;
   } else {
-    return S_ISLNK(path_stat.st_mode);
+    return S_ISREG(path_stat.st_mode);
   }
 }
 
@@ -339,6 +339,37 @@ bool is_symbolic_link(const path& p_, error_code& ec_) {
   } else {
     return S_ISLNK(path_stat.st_mode);
   }
+}
+
+/**
+ * Get file size of a specific filesystem.
+ * If the filesystem path is a regular file, return its actual size.
+ * If the filesystem path is a symbolic link, return the symbolic file size.
+ * If something gets wrong, return -1.
+ */
+long int file_size(const path& p_, error_code& ec_) {
+  struct stat path_stat;
+  if (is_regular_file(p_, ec_)) {
+    if (-1 == stat(p_.raw(), &path_stat)) {
+      ec_.set_err_msg(strerror(errno));
+      return -1;
+    }
+    else {
+      return path_stat.st_size;
+    }
+  }
+  else if (is_symbolic_link(p_, ec_)) {
+    if (-1 == lstat(p_.raw(), &path_stat)) {
+      ec_.set_err_msg(strerror(errno));
+      return -1;
+    } else {
+      return path_stat.st_size;
+    }
+  }
+  else {
+    ;
+  }
+  return -1;
 }
 
 /**
