@@ -75,10 +75,6 @@ bool quick_sort(random_it__ first_, random_it__ last_, long int s_, long int e_)
 }
 };  // namespace detail
 
-/**
- * Time complexity: O(n*lg(n))
- * Space complexity: O(1), sorting in place.
- */
 template <class random_it__>
 bool quick(random_it__ first_, random_it__ last_) {
   auto d = std::distance(first_, last_);
